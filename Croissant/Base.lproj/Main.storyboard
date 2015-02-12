@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Croissant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -22,8 +22,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1qW-Gb-lYz" kind="show" id="Fvx-tl-Jgo"/>
+                                    <action selector="showChatButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ahR-hF-V3y"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IR3-F8-xbQ">
+                                <rect key="frame" x="243" y="111" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activateIndicator:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Mxq-Tv-PSv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU3-qq-tbl">
+                                <rect key="frame" x="31" y="111" width="178" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nx-ol-baq">
+                                <rect key="frame" x="140" y="179" width="40" height="40"/>
+                                <state key="normal" image="checkmark-64.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -31,10 +51,15 @@
                     <navigationItem key="navigationItem" id="2a1-Fg-Caz"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="partnerButton" destination="2nx-ol-baq" id="2KF-sE-DBZ"/>
+                        <outlet property="userTextField" destination="vU3-qq-tbl" id="up4-8i-VKb"/>
+                        <segue destination="1qW-Gb-lYz" kind="show" identifier="showChatSegue" id="xde-KS-Twz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="390"/>
+            <point key="canvasLocation" x="1288" y="406"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="2lu-Xa-nhB">
@@ -77,4 +102,7 @@
             <point key="canvasLocation" x="720" y="-287"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark-64.png" width="64" height="64"/>
+    </resources>
 </document>

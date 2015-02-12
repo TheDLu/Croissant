@@ -13,5 +13,6 @@
 //#import "JSQMessagesViewController/JSQMessagesBubbleImageFactory.h"
 
 #import <JSQMessagesViewController/JSQMessages.h>
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "JSQSystemSoundPlayer/JSQSystemSoundPlayer.h"
